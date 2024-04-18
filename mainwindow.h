@@ -22,6 +22,8 @@ private slots:
 
     void on_button1_pressed();
 
+    void on_carta_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/">
-        <file>5s.jpg</file>
+    <qresource prefix="/carte">
+        <file>carte/10d.jpg</file>
+        <file>carte/5s.jpg</file>
     </qresource>
 </RCC>

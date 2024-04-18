@@ -13,16 +13,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_button1_clicked()
-{
-    QString text = ui->textBrowser->toPlainText();
-    ui->textBrowser->setText(text+QString(" viva il comunismo"));
-    ui->textBrowser->setTextBackgroundColor(QColor(255,0,0));
-}
 
 
-void MainWindow::on_button1_pressed()
+
+void MainWindow::on_carta_clicked()
 {
-    //ui->textBrowser->setTextBackgroundColor(QColor(255,0,0));
+    if(ui->carta->styleSheet()=="image: url(:/carte/carte/5s.jpg);"){
+        ui->carta->setStyleSheet("image: url(:/carte/carte/10d.jpg);");
+    }
+    else{
+        ui->carta->setStyleSheet("image: url(:/carte/carte/5s.jpg);");
+    }
+
 }
 
