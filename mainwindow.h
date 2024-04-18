@@ -24,6 +24,8 @@ private slots:
 
     void on_carta_clicked();
 
+    void on_mod1_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

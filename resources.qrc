@@ -3,4 +3,7 @@
         <file>carte/10d.jpg</file>
         <file>carte/5s.jpg</file>
     </qresource>
+    <qresource prefix="/textures">
+        <file>textures/tavolo.jpg</file>
+    </qresource>
 </RCC>
