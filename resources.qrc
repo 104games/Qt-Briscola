@@ -2,6 +2,44 @@
     <qresource prefix="/carte">
         <file>carte/10d.jpg</file>
         <file>carte/5s.jpg</file>
+        <file>carte/1d.jpg</file>
+        <file>carte/2d.jpg</file>
+        <file>carte/3d.jpg</file>
+        <file>carte/4d.jpg</file>
+        <file>carte/5d.jpg</file>
+        <file>carte/7d.jpg</file>
+        <file>carte/8d.jpg</file>
+        <file>carte/9d.jpg</file>
+        <file>carte/1b.jpg</file>
+        <file>carte/1c.jpg</file>
+        <file>carte/1s.jpg</file>
+        <file>carte/2b.jpg</file>
+        <file>carte/2c.jpg</file>
+        <file>carte/2s.jpg</file>
+        <file>carte/3b.jpg</file>
+        <file>carte/3c.jpg</file>
+        <file>carte/3s.jpg</file>
+        <file>carte/4b.jpg</file>
+        <file>carte/4c.jpg</file>
+        <file>carte/4s.jpg</file>
+        <file>carte/5b.jpg</file>
+        <file>carte/5c.jpg</file>
+        <file>carte/6b.jpg</file>
+        <file>carte/6c.jpg</file>
+        <file>carte/6d.jpg</file>
+        <file>carte/6s.jpg</file>
+        <file>carte/7b.jpg</file>
+        <file>carte/7c.jpg</file>
+        <file>carte/7s.jpg</file>
+        <file>carte/8b.jpg</file>
+        <file>carte/8c.jpg</file>
+        <file>carte/8s.jpg</file>
+        <file>carte/9b.jpg</file>
+        <file>carte/9c.jpg</file>
+        <file>carte/9s.jpg</file>
+        <file>carte/10b.jpg</file>
+        <file>carte/10c.jpg</file>
+        <file>carte/10s.jpg</file>
     </qresource>
     <qresource prefix="/textures">
         <file>textures/tavolo.jpg</file>

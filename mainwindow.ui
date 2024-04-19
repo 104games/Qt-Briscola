@@ -24,7 +24,7 @@
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="titolo">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -63,23 +63,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="mod1">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>310</y>
-      <width>131</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Player VS CPU</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="mod2">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
+      <x>320</x>
       <y>310</y>
       <width>131</width>
       <height>41</height>
@@ -92,7 +76,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="mod3">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>500</x>
       <y>310</y>
       <width>171</width>
       <height>41</height>
@@ -105,7 +89,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="mod4">
     <property name="geometry">
      <rect>
-      <x>790</x>
+      <x>720</x>
       <y>310</y>
       <width>151</width>
       <height>41</height>
@@ -113,6 +97,29 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </property>
     <property name="text">
      <string>5 Players</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>250</y>
+      <width>91</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="name">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>220</y>
+      <width>331</width>
+      <height>31</height>
+     </rect>
     </property>
    </widget>
   </widget>
