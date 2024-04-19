@@ -26,6 +26,10 @@ private slots:
 
     void on_mod1_clicked();
 
+    void on_mod2_clicked();
+
+    void on_mod3_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
