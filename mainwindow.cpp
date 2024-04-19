@@ -200,14 +200,47 @@ Player crea_persona(QString nome,bool is_bot){
     return player;
 }
 
+
+//SCELTA MODALITÁ
+
+int mod = -1;
+
 void MainWindow::on_mod1_clicked()
 {
     riempi_mazzo();
 
     ui->titolo->hide();
     ui->mod1->hide();
+    ui->mod2->hide();
+    ui->mod3->hide();
 
-    Player player1 = crea_persona("paolo",false);
-    cout << player1.carta1.punti << endl;
+    mod = 1;
+}
+
+
+void MainWindow::on_mod2_clicked()
+{
+    riempi_mazzo();
+
+    ui->titolo->hide();
+    ui->mod1->hide();
+    ui->mod2->hide();
+    ui->mod3->hide();
+
+    mod = 2;
+}
+
+
+void MainWindow::on_mod3_clicked()
+{
+    riempi_mazzo();
+
+    ui->titolo->hide();
+    ui->mod1->hide();
+    ui->mod2->hide();
+    ui->mod3->hide();
+    ui->name->show();
+
+    mod = 3;
 }
 
