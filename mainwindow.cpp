@@ -1,3 +1,5 @@
+//https://magliani.altervista.org/scuola/qt_creator/
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<vector>
