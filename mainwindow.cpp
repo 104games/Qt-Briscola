@@ -18,6 +18,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::start(){
+    ui->name->hide();
+    ui->isBot->hide();
+    ui->creaplayer->hide();
+}
 /*
  * semi:
  *      1 = denari
@@ -213,7 +218,6 @@ void MainWindow::on_mod1_clicked()
     ui->mod1->hide();
     ui->mod2->hide();
     ui->mod3->hide();
-
     mod = 1;
 }
 

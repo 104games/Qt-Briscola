@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,7 +16,7 @@
   <property name="font">
    <font>
     <family>System</family>
-    <pointsize>13</pointsize>
+    <pointsize>32</pointsize>
     <bold>true</bold>
    </font>
   </property>
@@ -107,6 +110,40 @@ li.checked::marker { content: &quot;\2612&quot;; }
       <width>331</width>
       <height>31</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="isBot">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>220</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka Text Semibold</family>
+      <pointsize>18</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>bot</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="creaplayer">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>260</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>create player</string>
     </property>
    </widget>
   </widget>
