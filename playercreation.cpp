@@ -6,9 +6,19 @@ PlayerCreation::PlayerCreation(QWidget *parent)
     , ui(new Ui::PlayerCreation)
 {
     ui->setupUi(this);
+
 }
+
+
 
 PlayerCreation::~PlayerCreation()
 {
     delete ui;
 }
+
+int mod;
+
+void PlayerCreation::passa_mod(int n){
+    mod = n;
+}
+

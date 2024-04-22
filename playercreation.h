@@ -14,6 +14,7 @@ class PlayerCreation : public QMainWindow
 public:
     explicit PlayerCreation(QWidget *parent = nullptr);
     ~PlayerCreation();
+    void passa_mod(int m);
 
 private:
     Ui::PlayerCreation *ui;
