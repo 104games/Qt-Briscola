@@ -2,6 +2,10 @@
 #define GAME_H
 
 #include <QMainWindow>
+#include <vector>
+using namespace std;
+
+
 
 namespace Ui {
 class game;
@@ -14,7 +18,7 @@ class game : public QMainWindow
 public:
     explicit game(QWidget *parent = nullptr);
     ~game();
-    void passa_mod(int m);
+    void passa_players(vector<QString> nomi, vector<bool> bt);
 
 private:
     Ui::game *ui;

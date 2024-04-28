@@ -16,6 +16,11 @@ public:
     ~PlayerCreation();
     void passa_mod(int m);
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_crea_clicked();
+
 private:
     Ui::PlayerCreation *ui;
 };

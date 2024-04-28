@@ -5,6 +5,9 @@
 #include<stack>
 #include <random>
 #include <algorithm>
+#include <iostream>
+using namespace std;
+
 using namespace std;
 game::game(QWidget *parent)
     : QMainWindow(parent)
@@ -43,6 +46,14 @@ public:
     }
 };
 
+
+
+
+//creazione mazzo vector e mazzo stack
+vector<Carta> mazzo_iniziale;
+stack<Carta> mazzo;
+
+
 class Player{
 public:
     Carta carta1;
@@ -50,21 +61,33 @@ public:
     Carta carta3;
     QString nome;
     bool is_bot;
-    Player(Carta c1,Carta c2, Carta c3,QString n, bool ib){
-        carta1 = c1;
-        carta2 = c2;
-        carta3 = c3;
+    Player(QString n,bool i){
+        carta1 = mazzo.top();
+        mazzo.pop();
+        carta2 = mazzo.top();
+        mazzo.pop();
+        carta3 = mazzo.top();
+        mazzo.pop();
         nome = n;
-        is_bot = ib;
+        is_bot = i;
     }
-
 };
 
+vector<Player> giocatori;
 
-//creazione mazzo vector e mazzo stack
-vector<Carta> mazzo_iniziale;
-stack<Carta> mazzo;
+void game::passa_players(vector<QString> nomi, vector<bool> bt){
+    for(int x=0;x<nomi.size();x++){
+        Player g = Player(nomi[x],bt[x]);
+        giocatori.push_back(g);
+    }
+    for(int x=0;x<nomi.size();x++){
+        ui->textBrowser->setText(giocatori[x].nome);
+    }
+}
+
 //mettere le carte nel vector
+
+
 
 //funzione di mescolamento
 vector<Carta> mescola(vector<Carta> vec){
@@ -189,13 +212,6 @@ void riempi_mazzo(){
 
 }
 
-Player crea_persona(QString nome,bool is_bot){
-    Carta carta1 = mazzo.top();
-    mazzo.pop();
-    Carta carta2 = mazzo.top();
-    mazzo.pop();
-    Carta carta3 = mazzo.top();
-    mazzo.pop();
-    Player player = Player(carta1,carta2,carta3,nome,is_bot);
-    return player;
-}
+
+
+
