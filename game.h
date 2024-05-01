@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include <vector>
+#include <iostream>
+#include "ui_game.h"
+#include "player.h"
+#include<stack>
 using namespace std;
 
 
@@ -18,10 +22,18 @@ class game : public QMainWindow
 public:
     explicit game(QWidget *parent = nullptr);
     ~game();
-    void passa_players(vector<QString> nomi, vector<bool> bt);
+    void start();
+
+
+
 
 private:
     Ui::game *ui;
+    vector<Player> giocatori;
+
+    //creazione mazzo vector e mazzo stack
+
+
 };
 
 #endif // GAME_H

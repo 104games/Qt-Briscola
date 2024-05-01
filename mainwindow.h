@@ -18,11 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_button1_clicked();
 
-    void on_button1_pressed();
-
-    void on_carta_clicked();
 
     void on_mod1_clicked();
 

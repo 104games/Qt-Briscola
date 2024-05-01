@@ -21,10 +21,6 @@ PlayerCreation::~PlayerCreation()
 }
 
 
-int players;
-int player_counts = 0;
-vector<QString> player_names;
-vector<bool> bots;
 
 void PlayerCreation::passa_mod(int n){
     if (n==1){
@@ -64,10 +60,8 @@ void PlayerCreation::on_crea_clicked()
         if (player_counts == players){
 
             game *g = new game();
-
-            g->passa_players(player_names,bots);
             g->show();
-
+            g->start();
         }
     }
 }
