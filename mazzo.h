@@ -7,6 +7,7 @@
 #include <stack>
 #include <random>
 #include <algorithm>
+#include<time.h>
 using namespace std;
 
 class Mazzo

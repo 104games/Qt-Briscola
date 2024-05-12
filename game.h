@@ -33,14 +33,25 @@ public:
 private slots:
     void on_carta1_clicked();
 
+    void on_carta2_clicked();
+
+    void on_carta3_clicked();
+
 private:
     Ui::game *ui;
     vector<Player> giocatori;
     int players;
     vector<string> nomi;
     vector<bool> bots;
-    void turno();
+    vector<Carta> tavolo;
+    vector<int> giocata;
     int attuale;
+    int punti1=0;
+    int punti2=0;
+    int rimaste=40;
+    void turno();
+    void assegna_punti();
+    int cpu();
     //creazione mazzo vector e mazzo stack
 
 

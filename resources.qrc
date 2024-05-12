@@ -40,6 +40,7 @@
         <file>carte/10b.jpg</file>
         <file>carte/10c.jpg</file>
         <file>carte/10s.jpg</file>
+        <file>carte/retro.jpg</file>
     </qresource>
     <qresource prefix="/textures">
         <file>textures/tavolo.jpg</file>

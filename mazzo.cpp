@@ -11,11 +11,14 @@ Carta Mazzo::pesca() {
 }
 
 vector<Carta> Mazzo::mescola(vector<Carta> vec){
+
+    srand(time(NULL));
     random_device rd;
-    mt19937 g(rd());
+    mt19937 g(time(NULL));
 
     // Shuffle the vector
     shuffle(vec.begin(), vec.end(), g);
+
     return vec;
 }
 
