@@ -19,8 +19,9 @@ public:
     bool can_carta3=true;
     string nome;
     bool is_bot;
+    int team;
     Player();
-    Player(string n, bool bt);
+    Player(string n, bool bt, int t);
     void pesca_carta(int n);
 };
 

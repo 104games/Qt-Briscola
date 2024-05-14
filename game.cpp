@@ -24,7 +24,7 @@ game::~game()
 
 Mazzo mazz = Mazzo();
 
-Player::Player(string n, bool i)
+Player::Player(string n, bool i, int t)
 {
     carta1 = mazz.mazzo.top();
     mazz.mazzo.pop();
@@ -34,6 +34,12 @@ Player::Player(string n, bool i)
     mazz.mazzo.pop();
     nome = n;
     is_bot = i;
+    if(t==0||t==2){
+        team =1;
+    }
+    if(t==1||t==3){
+        team =2;
+    }
 }
 
 void Player::pesca_carta(int n){
@@ -129,6 +135,8 @@ int game::cpu(){
 void game::turno(){
     ui->mazzo->setText(QString::fromStdString(to_string(mazz.mazzo.size())));
     ui->giocatore->setText(QString::fromStdString(giocatori[attuale].nome));
+    ui->punti1->hide();
+    ui->punti2->hide();
     if(tavolo.size()==0){
         ui->giocata1->hide();
         ui->giocata2->hide();
@@ -154,8 +162,8 @@ void game::turno(){
 
     if(!giocatori[attuale].can_carta1 && !giocatori[attuale].can_carta2 && !giocatori[attuale].can_carta3){
         if(giocatori.size()==2){
-            ui->punti1->setText(QString::fromStdString(giocatori[0].nome+ " " + to_string(punti1)));
-            ui->punti2->setText(QString::fromStdString(giocatori[1].nome+ " " + to_string(punti2)));
+            ui->punti1->setText(QString::fromStdString(nomi[0]+ " " + to_string(punti1)));
+            ui->punti2->setText(QString::fromStdString(nomi[1]+ " " + to_string(punti2)));
         }
         if(giocatori.size()==4){
             ui->punti1->setText(QString::fromStdString("team 1 " + to_string(punti1)));
@@ -200,12 +208,15 @@ void game::turno(){
         int scelta = cpu();
         if(scelta==1){
             tavolo.push_back(giocatori[attuale].carta1);
+
         }
         if(scelta==2){
             tavolo.push_back(giocatori[attuale].carta1);
+
         }
         if(scelta==3){
             tavolo.push_back(giocatori[attuale].carta1);
+
         }
         attuale++;
         if(attuale==giocatori.size()){
@@ -224,7 +235,7 @@ void game::start(){
     //QString::fromStdString()
     giocata.assign(4,1);
     for(int x=0; x<players; x++){
-        Player giocatore = Player(nomi[x],bots[x]);
+        Player giocatore = Player(nomi[x],bots[x],x);
         giocatori.push_back(giocatore);
 
     }
@@ -240,31 +251,84 @@ void game::assegna_punti(){
     int max=0;
 
     for(int x=0; x<tavolo.size();x++){
-        cout << tavolo[x].texture << endl;
+        if(giocata[x]==1){
+            cout << giocatori[x].carta1.texture << endl;
+            if (x==0){
+                ui->ultimo_carta1->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+            if (x==1){
+                ui->ultimo_carta2->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+            if (x==2){
+                ui->ultimo_carta3->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+            if (x==3){
+                ui->ultimo_carta4->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+        }
+        if(giocata[x]==2){
+            cout << giocatori[x].carta2.texture << endl;
+            if (x==0){
+                ui->ultimo_carta1->setStyleSheet(QString::fromStdString(giocatori[x].carta2.texture));
+            }
+            if (x==1){
+                ui->ultimo_carta2->setStyleSheet(QString::fromStdString(giocatori[x].carta2.texture));
+            }
+            if (x==2){
+                ui->ultimo_carta3->setStyleSheet(QString::fromStdString(giocatori[x].carta2.texture));
+            }
+            if (x==3){
+                ui->ultimo_carta4->setStyleSheet(QString::fromStdString(giocatori[x].carta2.texture));
+            }
+        }
+        if(giocata[x]==3){
+            cout << giocatori[x].carta3.texture << endl;
+            if (x==0){
+                ui->ultimo_carta1->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+            if (x==1){
+                ui->ultimo_carta2->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+            if (x==2){
+                ui->ultimo_carta3->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+            if (x==3){
+                ui->ultimo_carta4->setStyleSheet(QString::fromStdString(giocatori[x].carta1.texture));
+            }
+        }
         if(tavolo[x].seme == tavolo[max].seme){
             if(tavolo[x].num > tavolo[max].num){
                 max=x;
-                cout<<"stesso seme num alto "<<x<<endl;
+
             }
         }
         else if(tavolo[x].seme == mazz.briscola.seme){
             if(tavolo[max].seme == mazz.briscola.seme){
                 if(tavolo[x].num > tavolo[max].num){
-                    cout<<"entrambe briscole, num alto " << x << endl;
+
                     max=x;
                 }
             }
             else{
-                cout << "briscola " << x<< endl;
+
                 max=x;
             }
         }
     }
-    cout << giocatori[max].nome << endl;
-    if(max==0 || max==2){
+
+    if(giocatori[max].team==1){
         for(int x=0; x<tavolo.size(); x++){
             punti1+= tavolo[x].punti;
         }
+    }
+
+    if(giocatori[max].team==2){
+        for(int x=0; x<tavolo.size(); x++){
+            punti2+= tavolo[x].punti;
+        }
+    }
+
+    if(max==0 || max==2){
 
         if(giocatori.size()==4){
             if(max==2){
@@ -315,7 +379,10 @@ void game::assegna_punti(){
         }
 
     }
-    cout << endl << "nuovo turno" << endl << endl;
+
+    ui->ultimo_carta1->show();
+
+
     for(int x=0; x<giocatori.size();x++){
         giocatori[x].pesca_carta(giocata[x]);
     }
@@ -366,6 +433,24 @@ void game::on_carta3_clicked()
     }
     else{
         turno();
+    }
+}
+
+
+void game::on_pushButton_clicked()
+{   if(giocatori.size()==2){
+        ui->punti1->setText(QString::fromStdString(nomi[0]+ " " + to_string(punti1)));
+        ui->punti2->setText(QString::fromStdString(nomi[1]+ " " + to_string(punti2)));
+    }
+    if(giocatori.size()==4){
+        ui->punti1->setText(QString::fromStdString("team 1 " + to_string(punti1)));
+        ui->punti2->setText(QString::fromStdString("team 2 " + to_string(punti2)));
+    }
+    if(giocatori[attuale].team==1){
+        ui->punti1->show();
+    }
+    if(giocatori[attuale].team==2){
+        ui->punti2->show();
     }
 }
 

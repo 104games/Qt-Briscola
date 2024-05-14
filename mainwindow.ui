@@ -35,8 +35,8 @@
      <rect>
       <x>200</x>
       <y>30</y>
-      <width>831</width>
-      <height>141</height>
+      <width>841</width>
+      <height>161</height>
      </rect>
     </property>
     <property name="font">
@@ -66,9 +66,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="mod1">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>270</x>
       <y>310</y>
-      <width>131</width>
+      <width>151</width>
       <height>41</height>
      </rect>
     </property>
@@ -79,9 +79,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="mod2">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>530</x>
       <y>310</y>
-      <width>171</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -92,7 +92,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="mod3">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>850</x>
       <y>310</y>
       <width>151</width>
       <height>41</height>

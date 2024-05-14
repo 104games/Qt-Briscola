@@ -37,6 +37,8 @@ private slots:
 
     void on_carta3_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::game *ui;
     vector<Player> giocatori;
